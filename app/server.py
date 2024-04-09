@@ -33,9 +33,9 @@ class PredictionOut(BaseModel):
 
 app = FastAPI()
 
-#@app.get("/")
-#def read_root():
-    #return{'message ': 'Cargo Status API'}
+@app.get("/")
+def read_root():
+    return{'message ': 'Cargo Status API'}
 
 @app.post("/predict", response_model=PredictionOut)
 def predict(payload: TextIn):
