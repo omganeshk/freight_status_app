@@ -37,7 +37,7 @@ app = FastAPI()
 def read_root():
     return{'message ': 'Cargo Status API'}
 
-@app.post('/predict', response_model=PredictionOut)
+@app.post("/predict", response_model=PredictionOut)
 def predict(payload: TextIn):
     #features = np. array(data['features']).reshape(1, -1)
     prediction = predict_pipeline(payload.External_Status)
